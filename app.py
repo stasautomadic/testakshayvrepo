@@ -1,7 +1,9 @@
 import requests
 
 # URL to send the GET request
-url = "https://web-production-d0e1f.up.railway.app/update-data/"
+# url = "https://web-production-d0e1f.up.railway.app/update-data/"
+url = "https://web-production-c93a7.up.railway.app/update-data/"
+
 api_key = "123456"  # Replace with the actual API key
 
 # Parameters to include the API key in the request
