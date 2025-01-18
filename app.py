@@ -19,17 +19,17 @@ interval = 120  # Interval in seconds (2 minutes)
 for i in range(iterations):
     try:
         # Sending the GET request with API key as a query parameter
-        response = requests.get(url, params=params, timeout=30)  # Adding a timeout for safety
-
+        response = requests.get(url, params=params, timeout=110)  # Adding a timeout for safety
+        response.raise_for_status()
         # Checking if the request was successful
         if response.status_code == 200:
             print(f"Request {i + 1} was successful!")
-            print("Response Data:", response.text)
+            print("Response Data:", response)
         elif response.status_code == 401:
             print(f"Request {i + 1}: Unauthorized: Invalid API key.")
         else:
             print(f"Request {i + 1} failed with status code: {response.status_code}")
-            print("Response:", response.text)
+            print("Response:", response)
     except requests.exceptions.RequestException as e:
         # Catching any request-related errors
         print(f"An error occurred during request {i + 1}:", e)
